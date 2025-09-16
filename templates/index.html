@@ -474,7 +474,25 @@
         }
         
 
-
+        .profile-pic {
+            width: 100%;
+            max-width: 300px;       /* largeur max */
+            height: 350px;          /* fixe une hauteur */
+            object-fit: cover;      /* recadre sans déformer */
+            object-position: center;/* centre le visage */
+            border-radius: 20px;    /* arrondi */
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        
+        .profile-pic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.5);
+        }
+        
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -543,16 +561,15 @@
         <div class="about">
             <div class="about-text">
                 <h2>À propos de moi</h2>
-                <p>Passionné par les technologies et l’innovation, je suis actuellement étudiant en Master 2 Data Science et Management chez Nexa.</p>
+                <p>Je m'appelle <span style="color: var(--pink-primary); font-weight: bold;font-size: 1.2em; ">Amine Chabane</span>, <p> Passionné par les technologies et l’innovation, je suis actuellement étudiant en Master 2 Data Science et Management chez Nexa.</p>
                 <p>Mon expertise couvre le développement front-end et back-end, avec une attention particulière portée aux détails et à l'expérience utilisateur. Je suis toujours à la recherche de nouveaux défis et d'innovations technologiques.</p>
                 <p>Au cours de mon parcours, j’ai eu l’opportunité de réaliser plusieurs projets intéressants alliant analyse de données, intelligence artificielle et gestion de projet, ce qui m’a permis de développer à la fois des compétences techniques solides et une vision managériale.</p>
                 <p>Sérieux, motivé et toujours curieux d’apprendre, j’aime relever de nouveaux défis et mettre mes compétences au service de projets à impact. Mon objectif est de contribuer à la transformation digitale des entreprises en exploitant la puissance des données pour améliorer la prise de décision et créer de la valeur.</p>
             </div>
             <div class="about-image">
-                <div class="placeholder-image">
-                    Photo de profil
-                </div>
+                <img src="{{ url_for('static', filename='img/amine.jpg') }}" alt="Photo de Amine Chabane" class="profile-pic">
             </div>
+            
         </div>
     </section>
 
